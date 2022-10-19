@@ -1,3 +1,5 @@
+`define SIMU
+
 module frequency_divider (
 
     // Inputs
@@ -9,7 +11,11 @@ module frequency_divider (
 );
     wire rst;
     reg[31:0] count;
+`ifdef SIMU
+    localparam [31:0] max_count = (1) - 1;
+`else
     localparam [31:0] max_count = (12000000) - 1;
+`endif
 
     // Reset is the inverse of the reset button
     assign rst = ~rst_btn;
