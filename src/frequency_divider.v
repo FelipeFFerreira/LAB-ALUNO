@@ -1,4 +1,4 @@
-`define SIMU
+//`define SIMU
 
 module frequency_divider (
 
