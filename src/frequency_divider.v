@@ -20,11 +20,12 @@ module frequency_divider (
             out_clk <= 4'b0;
             count <= 32'b0;
         end
-        else if (  ) begin
-            
+        else if (count == max_count) begin
+            count <= 32'b0;
+            out_clk <= out_clk + 1'b1;
         end
         else begin
-            
+            count <= count + 1;
         end
     end
 
